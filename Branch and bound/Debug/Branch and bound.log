@@ -1,0 +1,11 @@
+﻿  Tree.cpp
+d:\users\софья\документы\visual studio 2015\projects\branch and bound\branch and bound\tree.cpp(48): error C2440: '=': cannot convert from 'int' to 'int **'
+  d:\users\софья\документы\visual studio 2015\projects\branch and bound\branch and bound\tree.cpp(48): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+d:\users\софья\документы\visual studio 2015\projects\branch and bound\branch and bound\tree.cpp(89): error C2440: '=': cannot convert from 'int' to 'int **'
+  d:\users\софья\документы\visual studio 2015\projects\branch and bound\branch and bound\tree.cpp(89): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+d:\users\софья\документы\visual studio 2015\projects\branch and bound\branch and bound\tree.cpp(94): error C2446: '<': no conversion from 'int **' to 'int'
+  d:\users\софья\документы\visual studio 2015\projects\branch and bound\branch and bound\tree.cpp(94): note: There is no context in which this conversion is possible
+  RouteList.cpp
+d:\users\софья\документы\visual studio 2015\projects\branch and bound\branch and bound\routelist.cpp(67): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+  Branch and bound.cpp
+  Generating Code...
