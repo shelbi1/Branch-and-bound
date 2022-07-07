@@ -1,5 +1,16 @@
 #pragma once
 #include <iostream>
+#include <vector>
+#include "Expences.h"
+#include "Objects.h"
+
+/*
+	переделать функцию перестановок всех значений (возвращаем массив массивов, 
+		где каждая строчка отвечает за перебор значений одного набора (разобраться с границами массивов... [1;n]
+
+	также каждую итерацию добавлять набор перестановок в objectPermutations[counter]
+
+*/
 
 enum Type
 {
@@ -13,19 +24,22 @@ class RouteList
 public:
 	Type type;
 	int objectNumber;
+	int currentExpences;
 	RouteList * next;
+
+	RouteList(); 
+	bool isEmpty(RouteList *head);									// проверка на пустоту 
+	void addToHead(RouteList *&head, Type type, int object);		// добавление в начало
+	void addAfterNode(RouteList *&pNode, Expences expences,
+		Type type, int objectNum, int centerNum);					// добавление после элемента  
+	int saveExpences(int expences);									// сохранение значения затрат 
+	void printLists(std::vector<RouteList*> head);					// печать списков
+	void printList(RouteList *head);								// печать списка 
+
+	std::vector<RouteList*> objectRearrangement(Expences exp, Objects obj, int num);// перестановка всех возможных путей
+	int permutations(Objects objects);
+
+	int addCenterAfterObject(RouteList *&p, Expences expences, Objects objects, int objectNum);
+	int addObjectAfterCenter(RouteList *&p, Expences expences, Objects objects, int centerNum);
+	RouteList* createList(Expences expences, Objects objects, RouteList *&head, int centerStartNum);
 };
-
-typedef RouteList * TList;
-														   
-void init(TList &head);						 			// инициалиция
-bool isEmpty(TList head);								// проверка на пустоту 
-void addToHead(TList &head, int object, Type type);		// добавление в начало
-void addAfterNode(TList pNode, int object, Type type);	// добавление после элемента  
-void deleteFromHead(TList &head);						// удаление с начала списка 
-void deleteAfterNode(TList pNode);						// удаление после заданного элемента 
-
-void deleteObject(int objectNumber);					// удаление элемента по типу (объект) и его номеру
-
-void clear(TList &head);								// очистка списка 
-void printList(TList head);								// печать списка

@@ -45,21 +45,16 @@ Node::Node()
 
 Node::Node(int value)
 {
-	data = value;
+	//data = value;
 	mark = label.Random();
 	left = nullptr;
 	right = nullptr;
 }
 
-void Node::createRoute()
-{
-	// здесь нужен перебор всех объектов с начального центра. в конце должны вернуться в тот же 
-
-}
-
 Tree::Tree()
 {
 	root = nullptr;
+	
 }
 
 Tree::~Tree()
@@ -92,12 +87,12 @@ void Tree::insert(TreeNode &T, int value)
 		T = new Node;
 		T->left = nullptr;
 		T->right = nullptr;
-		T->data = value;
+		//T->data = value;
 		T->mark = T->label.GetLabel();
 	}
 	else
 	{
-		if (value < T->data)
+		if (value < 0)//T->data)
 			insert(T->left, value);
 		else
 			insert(T->right, value);
@@ -113,7 +108,7 @@ void Tree::printTree(TreeNode T, int level)
 		for (int i = 1; i <= level; i++)
 			std::cout << "   ";
 
-		std::cout << T->data << std::endl;
+		//std::cout << T->data << std::endl;
 
 		printTree(T->left, level + 1);
 	}
